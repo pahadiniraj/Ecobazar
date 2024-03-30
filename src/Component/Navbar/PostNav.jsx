@@ -8,7 +8,7 @@ import React from "react";
 function PostNav() {
   return (
     <>
-      <nav className=" flex justify-between ml-5 mr-5 border-y  ">
+      <nav className=" flex justify-between  bg-slate-100 px-4 ">
         <div className="flex py-4 bg-[#00B207] gap-5 ">
           <MenuRoundedIcon className="text-white"></MenuRoundedIcon>
           <span className="text-white">All Categories</span>

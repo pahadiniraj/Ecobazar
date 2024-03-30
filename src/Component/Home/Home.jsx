@@ -1,7 +1,8 @@
+import CarouselEle from "../Carousel/CarouselEle";
 function Home() {
   return (
     <>
-      <h1> Hello Home</h1>
+      <CarouselEle></CarouselEle>
     </>
   );
 }
