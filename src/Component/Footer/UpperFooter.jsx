@@ -1,6 +1,6 @@
 function UpperFooter() {
   return (
-    <footer className="flex justify-between mt-5 py-10 px-20 bg-slate-100   ">
+    <footer className="flex justify-between mt-5 py-10 px-20 bg-slate-100  ">
       <div className="flex gap-2">
         <span>
           <svg
@@ -29,11 +29,11 @@ function UpperFooter() {
           <input
             type="text"
             placeholder="Your Email address"
-            className="p-2 rounded-2xl w-full"
+            className="p-2 rounded-2xl w-full border-none focus:outline-none "
           />
         </span>
         <span>
-          <button className="bg-[#00B207] p-2 rounded-2xl relative right-5">
+          <button className="bg-[#00B207] p-2 rounded-2xl relative right-5 ">
             Subscribe
           </button>
         </span>

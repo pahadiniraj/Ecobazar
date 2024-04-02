@@ -7,77 +7,71 @@ import "slick-carousel/slick/slick-theme.css";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Shop from "../Shop/Shop";
 import { useNavigate } from "react-router-dom";
-function CarouselEle() {
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "none", background: "none" }}
-        onClick={onClick}
-      />
-    );
-  }
+import AddButton from "../Button/AddButton";
+import { Button } from "@mui/material";
 
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "none", background: "none" }}
-        onClick={onClick}
-      />
-    );
-  }
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
+};
+
+function CarouselEle() {
+  const banner = [
+    {
+      src: fruit2,
+      subHeading: "WELCOME TO SHOPERY",
+      heading: "FRESH AND HEALTHY ORGANIC FOOD",
+      paragrah: "Free shipping in all your order,we deliver,you enjoy",
+      btn: "Shop Now",
+    },
+    {
+      src: fruit,
+      subHeading: "WELCOME TO SHOPERY",
+      heading: "FRESH AND HEALTHY ORGANIC FOOD",
+      paragrah: "Free shipping in all your order,we deliver,you enjoy",
+      btn: "Shop Now",
+    },
+  ];
 
   const navigate = useNavigate();
 
-  const images = [fruit, fruit2];
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    swipeToSlide: true,
-    fade: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+  const handleClick = () => {
+    navigate("shop");
   };
 
   return (
     <>
-      <div className="flex m-5 p-4 gap-2   ">
-        <div className="flex justify-center items-center  p-10 overflow-hidden w-2/4 ">
-          <Slider {...settings} className=" w-full">
-            {images.map((image, idx) => (
-              <img
-                className="  p-10 flex items-center justify-center"
-                key={idx}
-                src={image}
-              ></img>
-            ))}
-          </Slider>
-        </div>
-        <div className="flex flex-col w-2/4 justify-start py-20 gap-2">
-          <h2 className="font-normal text-green-500 text-sm">
-            WELCOME TO SHOPERY
-          </h2>
-          <h1 className="font-bold text-5xl">Fresh & Healthy</h1>
-          <h1 className="font-bold text-5xl mb-4 "> Organic Food</h1>
-          <h2 className="text-slate-400 mb-6">
-            Free shipping on all your order. we deliver, you enjoy{" "}
-          </h2>
-
-          <button
-            onClick={() => navigate("/shop")}
-            className="w-1/4 flex gap-4 bg-[#0acd0a] px-5 py-3 rounded-3xl text-white items-center justify-center hover:bg-[#00B207]"
-          >
-            <p>Shop Now </p> <ArrowForwardIcon></ArrowForwardIcon>
-          </button>
-        </div>
+      <div className="w-[1200px] mx-auto my-4">
+        <Slider {...settings}>
+          {banner.map((val, idx) => (
+            <div key={idx}>
+              <div className="flex ">
+                <img src={val.src} alt="img" className="w-[50%]" />
+                <div className=" w-full items-center">
+                  <div className="flex flex-col justify-center h-full">
+                    <div className="w-[400px] flex flex-col gap-3">
+                      <p>{val.subHeading}</p>
+                      <h2 className="text-4xl">{val.heading}</h2>
+                      <p>{val.paragrah}</p>
+                      <AddButton
+                        className={
+                          " bg-[#00B207] rounded-3xl p-2 w-48 text-white font-medium flex justify-center gap-3 items-center hover:bg-[#0bc70b]"
+                        }
+                        text="Shop Now"
+                        click={handleClick}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </>
   );

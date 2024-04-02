@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 function LowerFooter() {
-  const images = [];
   return (
-    <footer className=" py-10 px-20 bg-zinc-900 text-white ">
+    <footer className=" py-10 px-20 bg-zinc-900 text-white  ">
       <div className="flex justify-between  border-b border-slate-100 pb-8">
         <span className="w-[30%] ">
           <h3 className="mb-4 text-lg font-semibold">About Shopery</h3>

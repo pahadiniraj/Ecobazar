@@ -1,4 +1,10 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  createRoutesFromChildren,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Layout from "../../Layout";
 import Home from "../Home/Home";
 import Shop from "../Shop/Shop";
@@ -16,6 +22,10 @@ import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 import Product from "../Product/Product";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import TrackOrder from "../TrackOrder/TrackOrder";
+import All from "../All/All";
+import Vegetable from "../VegFrtMeat/Vegetable";
+import Fruit from "../VegFrtMeat/Fruit";
+import MeatAndFish from "../VegFrtMeat/MeatAndFish";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +35,26 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+        children: [
+          {
+            path: "",
+            element: <All />,
+          },
+          {
+            path: "vegetable",
+            element: <Vegetable></Vegetable>,
+          },
+          {
+            path: "fruits",
+            element: <Fruit></Fruit>,
+          },
+          {
+            path: "meatandfish",
+            element: <MeatAndFish></MeatAndFish>,
+          },
+        ],
       },
+
       {
         path: "shop",
         element: <Shop />,
