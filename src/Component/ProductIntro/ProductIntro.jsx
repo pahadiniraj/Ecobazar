@@ -16,24 +16,27 @@ function ProductIntro() {
   };
   return (
     <>
-      <div className=" bg-[#EDF2EE]  gap-0 py-20 ">
-        <div className="w-[1400px] mx-auto  ">
+      <div className=" bg-[#EDF2EE]   py-20 w-full  px-4">
+        <div className="container mx-auto   ">
           <div className="flex-col flex justify-center items-center  gap-4 pt-28 p-10 ">
-            <h3 className="text-4xl font-semibold">Introducing Our Product</h3>
-            <div className="flex justify-center gap-6 ">
+            <h3 className="text-3xl font-semibold">Introducing Our Product</h3>
+            <div className="flex justify-center gap-4 text-xs ">
               <button
                 onClick={() => {
                   setItems(ProductMenu);
                   setActiveCatagory("all");
                 }}
-                className={
-                  activeCatagory === "all"
-                    ? "text-green-600 border-b-2 border-green-500 pb-2"
-                    : ""
-                }
+                className={`
+                  ${
+                    activeCatagory === "all"
+                      ? "text-green-600 border-b-2 border-green-500 pb-2 "
+                      : "text-[#808080]"
+                  }
+                `}
               >
                 All
               </button>
+              <div className=" relative top-1 text-[#808080]">|</div>
               <button
                 onClick={() => {
                   filterItem("vegetable");
@@ -42,11 +45,12 @@ function ProductIntro() {
                 className={
                   activeCatagory === "vegetable"
                     ? "text-green-600 border-b-2 border-green-500 pb-2"
-                    : ""
+                    : "text-[#808080]"
                 }
               >
                 Vegetable
               </button>
+              <div className=" relative top-1 text-[#808080]">|</div>
               <button
                 onClick={() => {
                   filterItem("fruit");
@@ -55,11 +59,12 @@ function ProductIntro() {
                 className={
                   activeCatagory === "fruit"
                     ? "text-green-600 border-b-2 border-green-500 pb-2"
-                    : ""
+                    : "text-[#808080]"
                 }
               >
                 Fruit
               </button>
+              <div className=" relative top-1 text-[#808080]">|</div>
               <button
                 onClick={() => {
                   filterItem("meatandfish");
@@ -68,43 +73,43 @@ function ProductIntro() {
                 className={
                   activeCatagory === "meatandfish"
                     ? "text-green-600 border-b-2 border-green-500 pb-2"
-                    : ""
+                    : "text-[#808080]"
                 }
               >
                 Meat & Fish
               </button>
-              <NavLink to="product" className="pt-1">
+              <div className=" relative top-1 text-[#808080]">|</div>
+              <NavLink to="product" className="pt-1 text-[#808080]">
                 View All
               </NavLink>
             </div>
           </div>
-          <div className=" grid grid-cols-4 gap-0 ">
+          <div className=" grid grid-cols-4  px-28">
             {items.map((menu, index) => (
               <div
                 key={index}
-                className="bg-white border h-4/4 w-4/4 hover:border-green-600 shadow-md hover:shadow-green-300"
+                className="bg-white border  hover:border-green-600 shadow-md hover:shadow-green-300"
               >
                 {menu.discount ? (
-                  <div className="bg-red-600 rounded m-4 text-white h-5 w-16 text-sm px-1">
+                  <div className="bg-red-600 rounded m-3 text-white h-5 w-20 text-sm px-1 text-center py-2 flex justify-center items-center">
                     {menu.discount}
                   </div>
                 ) : (
-                  <div className="rounded m-4 text-white h-5 w-16 text-sm px-1"></div>
+                  <div className="rounded m-4 text-white h-1 w-16 text-sm px-1"></div>
                 )}
-
-                <img
-                  src={menu.image}
-                  alt=""
-                  className="bg-white h-4/4 w-4/4 ml-4 "
-                />
-                <div className="flex justify-between m-4 ">
-                  <div className="">
-                    <p className="text-slate-500 text-lg">{menu.name}</p>
-                    <p className="font-medium text-xl">{menu.price}</p>
-                    <p>{menu.description}</p>
+                <div className="   flex items-center justify-center">
+                  <div className="w-[330px]">
+                    <img src={menu.image} alt={menu.name} />
                   </div>
-                  <div className="bg-white border border-slate-400 w-12 h-12 flex justify-center items-center rounded-full mt-4 hover:bg-[#00B207] hover:text-white">
-                    <GiShoppingBag className="text-2xl " />
+                </div>
+                <div className="flex justify-between mx-4 my-2  ">
+                  <div className="">
+                    <p className="text-slate-500 text-xs">{menu.name}</p>
+                    <p className="font-medium text-sm">{menu.price}</p>
+                    <p className="text-xs">{menu.description}</p>
+                  </div>
+                  <div className="bg-white border border-slate-400 w-8 h-8 flex justify-center items-center rounded-full mt-2 mx-2 hover:bg-[#00B207] hover:text-white">
+                    <GiShoppingBag className="text-xl " />
                   </div>
                 </div>
               </div>

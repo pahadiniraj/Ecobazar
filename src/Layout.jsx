@@ -9,12 +9,14 @@ import LowerFooter from "./Component/Footer/LowerFooter";
 function Layout() {
   return (
     <>
-      <PreNav></PreNav>
-      <MainNav></MainNav>
-      <PostNav></PostNav>
-      <Outlet></Outlet>
-      <UpperFooter></UpperFooter>
-      <LowerFooter></LowerFooter>
+      <div className="font-primary">
+        <PreNav></PreNav>
+        <MainNav></MainNav>
+        <PostNav></PostNav>
+        <Outlet></Outlet>
+        <UpperFooter></UpperFooter>
+        <LowerFooter></LowerFooter>
+      </div>
     </>
   );
 }

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
+import Img from "../../assets/CounterImg/BG.png";
 
 function CounterPage() {
   const [counterState, setCounterState] = useState(false);
   return (
-    <div className="bg-black  h-[311px] w-full ">
-      <div className="h-full mx-auto justify-center flex items-center">
-        <div className="  h-3/4 w-[1320px] justify-center flex items-center gap-8 ">
+    <div className="bg-black   w-full ">
+      <div className=" container mx-auto">
+        <div className="justify-center flex items-center h-[311px] px-28">
           {[
             {
               count: 37,
@@ -16,28 +17,28 @@ function CounterPage() {
             },
             {
               count: 500,
-              discription: "Years of Hard Work",
+              discription: "Happy Customer",
               sign: "k+",
             },
             {
               count: 28,
-              discription: "Years of Hard Work",
+              discription: "Qualified Team Member",
             },
             {
               count: 750,
-              discription: "Years of Hard Work",
+              discription: "Monthly Orders",
               sign: "k+",
             },
           ].map((val, idx) => (
             <div
               key={idx}
-              className="bg-slate-800 h-3/4 w-1/4  rounded flex flex-col justify-center items-center gap-1 "
+              className="bg-slate-800 rounded flex flex-col justify-center items-center gap-1 mx-4 w-[312px] h-[174px] "
             >
               <ScrollTrigger
                 onEnter={() => setCounterState(true)}
-                onExit={() => setCounterState(false)}
+                // onExit={() => setCounterState(false)}
               >
-                <h2 className="text-5xl text-green-500">
+                <h2 className="text-4xl text-green-500 ">
                   {counterState && (
                     <CountUp start={0} end={val.count} duration={3.5}></CountUp>
                   )}
@@ -45,7 +46,7 @@ function CounterPage() {
                   {val.sign}
                 </h2>
               </ScrollTrigger>
-              <p className="text-white">Year of HardWork</p>
+              <p className="text-white text-sm">{val.discription}</p>
             </div>
           ))}
         </div>
