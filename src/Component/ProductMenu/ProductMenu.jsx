@@ -8,6 +8,7 @@ const ProductMenu = [
     discount: "Sale 50%",
     price: "$14.99",
     stars: 4.4,
+    reviews: 50,
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const ProductMenu = [
     description: "loremjncjnd",
     discount: "Sale 50%",
     price: "$14.99",
-    stars: 4.4,
+    stars: 5,
+    reviews: 50,
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const ProductMenu = [
     description: "loremjncjnd",
     price: "$14.99",
     stars: 4.4,
+    reviews: 50,
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const ProductMenu = [
     description: "loremjncjnd",
     price: "$14.99",
     stars: 4.4,
+    reviews: 50,
   },
   {
     id: 5,
@@ -46,6 +50,7 @@ const ProductMenu = [
     discount: "Sale 50%",
     price: "$14.99",
     stars: 4.4,
+    reviews: 50,
   },
   {
     id: 6,
@@ -54,7 +59,8 @@ const ProductMenu = [
     category: "vegetable",
     description: "loremjncjnd",
     price: "$14.99",
-    stars: 4.4,
+    stars: 2.5,
+    reviews: 50,
   },
   {
     id: 7,
@@ -65,6 +71,7 @@ const ProductMenu = [
     discount: "Sale 50%",
     price: "$14.99",
     stars: 4.4,
+    reviews: 50,
   },
   {
     id: 8,
@@ -74,6 +81,7 @@ const ProductMenu = [
     description: "loremjncjnd",
     price: "$14.99",
     stars: 4.4,
+    reviews: 50,
   },
   {
     id: 8,
@@ -83,6 +91,7 @@ const ProductMenu = [
     description: "loremjncjnd",
     price: "$14.99",
     stars: 4.4,
+    reviews: 50,
   },
 ];
 export default ProductMenu;

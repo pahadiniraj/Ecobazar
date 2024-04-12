@@ -35,7 +35,7 @@ function Featured() {
 
   return (
     <>
-      <div className="   relative top-28 w-full ">
+      <div className="  relative top-28 w-full ">
         <div className="container mx-auto px-28 ">
           <div className="flex justify-center border border-solid  border-slate-800.[.1] rounded-lg">
             {featuredItems.map((item, idx) => (

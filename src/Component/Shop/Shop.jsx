@@ -1,7 +1,13 @@
+import BreadCrums from "../BreadCrums/BreadCrums";
+import FilterProduct from "../Filter/FilterProduct/FilterProduct";
+import UnderFilter from "../UnderFilter/UnderFilter";
+
 function Shop() {
   return (
     <>
-      <h1>hello Shop</h1>
+      <BreadCrums />
+      <FilterProduct />
+      <UnderFilter />
     </>
   );
 }

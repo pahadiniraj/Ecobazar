@@ -1,5 +1,6 @@
 import React from "react";
 import { GiShoppingBag } from "react-icons/gi";
+import Stars from "../Stars/Stars";
 
 const FeaturedProduct = () => {
   const featuredMenu = [
@@ -11,7 +12,8 @@ const FeaturedProduct = () => {
       description: "loremjncjnd",
       discount: "Sale 50%",
       price: "$14.99",
-      stars: 4.4,
+      stars: 2.4,
+      reviews: 50,
     },
     {
       id: 2,
@@ -21,7 +23,8 @@ const FeaturedProduct = () => {
       description: "loremjncjnd",
       discount: "Sale 50%",
       price: "$14.99",
-      stars: 4.4,
+      stars: 3.4,
+      reviews: 50,
     },
     {
       id: 3,
@@ -31,6 +34,7 @@ const FeaturedProduct = () => {
       description: "loremjncjnd",
       price: "$14.99",
       stars: 4.4,
+      reviews: 50,
     },
     {
       id: 4,
@@ -39,7 +43,8 @@ const FeaturedProduct = () => {
       category: "vegetable",
       description: "loremjncjnd",
       price: "$14.99",
-      stars: 4.4,
+      stars: 2.4,
+      reviews: 50,
     },
     {
       id: 5,
@@ -49,7 +54,8 @@ const FeaturedProduct = () => {
       description: "loremjncjnd",
       discount: "Sale 50%",
       price: "$14.99",
-      stars: 4.4,
+      stars: 1.5,
+      reviews: 50,
     },
   ];
 
@@ -63,7 +69,7 @@ const FeaturedProduct = () => {
           {featuredMenu.map((menu, index) => (
             <div
               key={index}
-              className={`border   hover:border-green-600 shadow-md hover:shadow-green-300`}
+              className={`border group  hover:border-green-600 shadow-md hover:shadow-green-300`}
             >
               {menu.discount ? (
                 <div className="bg-red-600 rounded m-2 text-white h-5 w-20 text-xs px-1 text-center py-1 flex justify-center items-center">
@@ -79,11 +85,13 @@ const FeaturedProduct = () => {
               </div>
               <div className="flex justify-between m-3 ">
                 <div className="">
-                  <p className="text-slate-500 text-xs">{menu.name}</p>
+                  <p className="text-slate-500 text-xs group-hover:text-[#2C742F]">
+                    {menu.name}
+                  </p>
                   <p className="font-medium text-sm">{menu.price}</p>
-                  <p className="text-xs">{menu.description}</p>
+                  <Stars stars={menu.stars} />
                 </div>
-                <div className="bg-white border border-slate-400 w-8 h-8 flex justify-center items-center rounded-full mt-2 mx-2 hover:bg-[#00B207] hover:text-white">
+                <div className="bg-white border border-slate-400 w-8 h-8 flex justify-center items-center rounded-full mt-2 mx-2 group-hover:bg-[#00B207] group-hover:text-white">
                   <GiShoppingBag className="text-xl " />
                 </div>
               </div>

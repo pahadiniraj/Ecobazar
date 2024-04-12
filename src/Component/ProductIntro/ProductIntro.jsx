@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ProductMenu from "../ProductMenu/ProductMenu";
 import { GiShoppingBag } from "react-icons/gi";
-
+import Stars from "../Stars/Stars";
 function ProductIntro() {
   const [items, setItems] = useState(ProductMenu);
 
@@ -88,10 +88,10 @@ function ProductIntro() {
             {items.map((menu, index) => (
               <div
                 key={index}
-                className="bg-white border  hover:border-green-600 shadow-md hover:shadow-green-300"
+                className="bg-white border group  hover:border-green-600 shadow-md hover:shadow-green-300"
               >
                 {menu.discount ? (
-                  <div className="bg-red-600 rounded m-3 text-white h-5 w-20 text-sm px-1 text-center py-2 flex justify-center items-center">
+                  <div className="bg-red-600 rounded m-2 text-white h-5 w-20 text-sm px-1 text-center py-2 flex justify-center items-center">
                     {menu.discount}
                   </div>
                 ) : (
@@ -104,11 +104,14 @@ function ProductIntro() {
                 </div>
                 <div className="flex justify-between mx-4 my-2  ">
                   <div className="">
-                    <p className="text-slate-500 text-xs">{menu.name}</p>
+                    <p className="text-slate-500 text-xs group-hover:text-[#2C742F]">
+                      {menu.name}
+                    </p>
                     <p className="font-medium text-sm">{menu.price}</p>
-                    <p className="text-xs">{menu.description}</p>
+
+                    <Stars stars={menu.stars} reviews={menu.reviews} />
                   </div>
-                  <div className="bg-white border border-slate-400 w-8 h-8 flex justify-center items-center rounded-full mt-2 mx-2 hover:bg-[#00B207] hover:text-white">
+                  <div className="bg-white border border-slate-400 w-8 h-8 flex justify-center items-center rounded-full mt-2 mx-2 group-hover:bg-[#00B207] group-hover:text-white">
                     <GiShoppingBag className="text-xl " />
                   </div>
                 </div>
