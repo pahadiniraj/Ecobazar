@@ -9,12 +9,13 @@ import { FilterList } from "@mui/icons-material";
 function Shop() {
   const [select, setSelect] = useState();
   const [productList, setProductList] = useState(Products);
-  const [categories, setCategories] = useState();
-  const [rating, setRating] = useState();
+  const [categories, setCategories] = useState("");
+  const [rating, setRating] = useState(null);
+  const [tag, setTag] = useState([]);
 
   useEffect(() => {
     filterProducts();
-  }, [select, categories, rating]);
+  }, [select, categories, rating, tag]);
 
   const filterProducts = () => {
     let filteredList = Products;
@@ -25,10 +26,7 @@ function Shop() {
       );
       setProductList(filteredList);
     }
-    if (!select) {
-      filteredList = Products;
-      setProductList(filteredList);
-    }
+
     if (categories) {
       filteredList = filteredList.filter(
         (product) =>
@@ -37,20 +35,25 @@ function Shop() {
       setProductList(filteredList);
     }
 
-    if (rating) {
+    if (rating?.length) {
       filteredList = filteredList.filter((product) =>
         rating.includes(product.stars.toString())
       );
       setProductList(filteredList);
-      if (rating.length === 0) {
-        filteredList = Products;
-        setProductList(filteredList);
-      }
+    }
+
+    if (tag?.length) {
+      filteredList = filteredList.filter((product) =>
+        tag.includes(product.tag)
+      );
+
+      setProductList(filteredList);
     }
   };
 
   const onListSelected = (value) => {
     setSelect(value);
+    console.log(value);
   };
 
   const handleCatagories = (value) => {
@@ -63,7 +66,7 @@ function Shop() {
   };
 
   const handleTag = (value) => {
-    console.log(value);
+    setTag(value);
   };
 
   const handleSelectedPrice = (value) => {

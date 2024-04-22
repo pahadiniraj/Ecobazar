@@ -1,43 +1,102 @@
-import React from "react";
+import { Password } from "@mui/icons-material";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const SignUp = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+    acceptTerm: false,
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(formData);
+    setFormData({
+      email: "",
+      password: "",
+      confirmPassword: "",
+      acceptTerm: false,
+    });
+  };
+
+  const handleInputChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleChecktChange = (e) => {
+    let name = e.target.name;
+    let checked = e.target.checked;
+    setFormData({ ...formData, [name]: checked });
+  };
+
   return (
     <div className="bg-slate-50 w-full">
       <div className=" container mx-auto px-32 ">
         <div className=" flex justify-center items-center h-[531px]">
-          <div className="shadow-md flex flex-col items-center w-2/6 gap-3 px-4  py-4 rounded-md border ">
+          <div className="bg-white shadow-md flex flex-col items-center w-2/5 gap-3 px-4  py-7 rounded-md border ">
             <h3 className="text-2xl font-semibold">Create Account</h3>
-            <div className=" w-full  flex flex-col gap-4">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-2 w-full items-center p-2"
+            >
+              <label htmlFor="email"></label>
               <input
-                type=""
-                className="w-full rounded-sm border p-1 text-sm"
+                type="email"
+                name="email"
+                id="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 placeholder="Email"
+                className="w-full p-2 rounded-md text-sm border"
               />
+              <label htmlFor="password"></label>
               <input
-                type=""
-                className="w-full rounded-sm border p-1 text-sm"
+                type="password"
+                name="password"
+                id="password"
+                value={formData.password}
+                onChange={handleInputChange}
                 placeholder="Password"
+                className="w-full p-2 rounded-md text-sm border"
               />
               <input
-                type=""
-                className="w-full rounded-sm border p-1 text-sm"
+                type="Password"
+                name="confirmPassword"
+                id="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
                 placeholder="Confirm Password"
+                className="w-full p-2 rounded-md text-sm border"
               />
-            </div>
-            <div className="flex justify-start gap-1 w-full">
-              <input type="checkbox" className="" />
-              <p className="text-xs">Accept all terms & Conditions</p>
-            </div>
-            <button className="bg-green-500 w-full rounded-2xl text-white py-1 hover:bg-green-600 ">
-              Create Account
-            </button>
-            <p className="text-xs flex gap-1">
-              Already have account
-              <NavLink to="/signin" className="hover:text-green-600">
-                Login
-              </NavLink>
-            </p>
+              <input
+                type="submit"
+                value="Submit"
+                className="bg-green-500 p-2 rounded-lg text-white w-full hover:bg-green-600  cursor-pointer"
+              />
+              <div className="flex  w-full justify-between">
+                <div className="flex gap-1 text-sm p-2">
+                  <input
+                    type="checkbox"
+                    id="acceptTerm"
+                    onChange={handleChecktChange}
+                    name="acceptTerm"
+                    checked={formData.acceptTerm}
+                  />
+                  <label htmlFor="acceptTerm">
+                    Accept all terms & Conditions
+                  </label>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

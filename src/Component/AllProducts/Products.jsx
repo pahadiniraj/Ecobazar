@@ -11,6 +11,7 @@ const Products = [
     price: "$14.99",
     stars: 4.4,
     reviews: 50,
+    tag: "healthy",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const Products = [
     price: "$14.99",
     stars: 5,
     reviews: 50,
+    tag: "lowfat",
   },
   {
     id: 3,

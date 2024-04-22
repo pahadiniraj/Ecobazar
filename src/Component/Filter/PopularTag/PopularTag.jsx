@@ -7,42 +7,55 @@ const PopularTag = ({ handleTag }) => {
   const tags = [
     {
       name: "Healthy",
+      tag: "healthy",
     },
     {
       name: "Low Fat",
+      tag: "lowfat",
     },
     {
       name: "Vegetarian",
+      tag: "vegetarian",
     },
     {
       name: "Kid foods",
+      tag: "kidfoods",
     },
     {
       name: "Vitamins",
+      tag: "vitamins",
     },
     {
       name: "Bread",
+      tag: "bread",
     },
     {
       name: "Meat",
+      tag: "meat",
     },
     {
       name: "Snacks",
+      tag: "snacks",
     },
     {
       name: "Tiffin",
+      tag: "tiffin",
     },
     {
       name: "Lunch",
+      tag: "lunch",
     },
     {
       name: "Dinner",
+      tag: "dinner",
     },
     {
       name: "Breakfast",
+      tag: "breakfast",
     },
     {
       name: "Fruits",
+      tag: "fruits",
     },
   ];
 
@@ -81,12 +94,12 @@ const PopularTag = ({ handleTag }) => {
                 <button
                   key={index}
                   className={`p-2 text-xs bg-[#F2F2F2]  rounded-2xl m-1 ${
-                    selectedTags.includes(value.name)
+                    selectedTags.includes(value.tag)
                       ? "bg-green-600 text-white"
                       : ""
                   }`}
                   onClick={() => {
-                    toggleTag(value.name);
+                    toggleTag(value.tag);
                   }}
                 >
                   {value.name}
