@@ -7,6 +7,7 @@ import FilterOption from "../FilterOption/FilterOption";
 const FilterProduct = ({ onGetSelect }) => {
   const handleOnChange = (event) => {
     onGetSelect(event.target.value);
+    
   };
 
   return (

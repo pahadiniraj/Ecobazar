@@ -4,18 +4,18 @@ import UnderFilter from "../UnderFilter/UnderFilter";
 import Products from "../AllProducts/Products";
 import { useState, useEffect } from "react";
 import Pagenation from "../Pagenation/Pagenation";
-import { FilterList } from "@mui/icons-material";
 
 function Shop() {
-  const [select, setSelect] = useState();
+  const [select, setSelect] = useState("");
   const [productList, setProductList] = useState(Products);
   const [categories, setCategories] = useState("");
-  const [rating, setRating] = useState(null);
+  const [rating, setRating] = useState([]);
   const [tag, setTag] = useState([]);
+  const [price, setPrice] = useState([]);
 
   useEffect(() => {
     filterProducts();
-  }, [select, categories, rating, tag]);
+  }, [select, categories, rating, tag, price]);
 
   const filterProducts = () => {
     let filteredList = Products;
@@ -27,18 +27,25 @@ function Shop() {
       setProductList(filteredList);
     }
 
+    if (!select) {
+      setProductList(Products);
+    }
+
     if (categories) {
       filteredList = filteredList.filter(
-        (product) =>
-          product.category === categories || product.description === categories
+        (product) => product.category === categories
       );
       setProductList(filteredList);
     }
 
     if (rating?.length) {
       filteredList = filteredList.filter((product) =>
-        rating.includes(product.stars.toString())
+        rating.includes(parseInt(product.stars).toString())
       );
+      setProductList(filteredList);
+    }
+
+    if (!rating?.length) {
       setProductList(filteredList);
     }
 
@@ -47,6 +54,19 @@ function Shop() {
         tag.includes(product.tag)
       );
 
+      if (!tag.length) {
+        setProductList(filteredList);
+      }
+
+      setProductList(filteredList);
+    }
+
+    if (price?.length) {
+      filteredList = filteredList.filter(
+        (product) =>
+          parseInt(product.prices) > price[0] &&
+          parseInt(product.prices) < price[1]
+      );
       setProductList(filteredList);
     }
   };
@@ -71,6 +91,11 @@ function Shop() {
 
   const handleSelectedPrice = (value) => {
     console.log(value);
+    setPrice(value);
+  };
+
+  const handlePageClick = (value) => {
+    console.log(value);
   };
 
   return (
@@ -84,7 +109,7 @@ function Shop() {
         handleSelectedPrice={handleSelectedPrice}
         productList={productList}
       />
-      <Pagenation />
+      <Pagenation handlePageClick={handlePageClick} />
     </>
   );
 }
