@@ -5,14 +5,14 @@ import Stars from "../../Stars/Stars";
 import Cards from "../../Cards/Cards";
 
 function ProductIntro() {
-  const [items, setItems] = useState(Products);
+  let AllProduct = Products.slice(0, 20);
+  const [items, setItems] = useState(AllProduct);
 
   const [activeCatagory, setActiveCatagory] = useState("all");
 
   const filterItem = (cate) => {
-    const updatedItem = Products.filter((curr) => {
-      return curr.category === cate;
-    });
+    const updatedItem = Products.filter((curr) => curr.category === cate);
+
     setItems(updatedItem);
   };
   return (
@@ -23,10 +23,7 @@ function ProductIntro() {
             <h3 className="text-3xl font-semibold">Introducing Our Product</h3>
             <div className="flex justify-center gap-4 text-xs ">
               <button
-                onClick={() => {
-                  setItems(Products);
-                  setActiveCatagory("all");
-                }}
+                onClick={() => (setItems(AllProduct), setActiveCatagory("all"))}
                 className={`
                   ${
                     activeCatagory === "all"

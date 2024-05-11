@@ -33,7 +33,7 @@ const AboutThird = () => {
               bibendum nunc eget elementum.
             </p>
             {para.map((value, index) => (
-              <div className="mt-4">
+              <div className="mt-4" key={index}>
                 <div className="flex gap-3 text-xs">
                   <div className="bg-green-200  rounded-full">{value.icon}</div>
                   <span className="text-xs">{value.para}</span>

@@ -28,6 +28,7 @@ import Fruit from "../VegFrtMeat/Fruit";
 import MeatAndFish from "../VegFrtMeat/MeatAndFish";
 import SignIn from "../SignIn/SignIn";
 import SignUp from "../SignUp/SignUp";
+import BreadCrums from "../Shop/BreadCrums/BreadCrums";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,12 @@ const router = createBrowserRouter([
       {
         path: "shop",
         element: <Shop />,
+        children: [
+          {
+            path: "",
+            element: <BreadCrums />,
+          },
+        ],
       },
       {
         path: "pages",
@@ -54,6 +61,12 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About></About>,
+        children: [
+          {
+            path: "",
+            element: <BreadCrums />,
+          },
+        ],
       },
       {
         path: "contact",

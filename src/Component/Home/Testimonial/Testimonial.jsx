@@ -11,21 +11,21 @@ const Testimonial = () => {
       comment:
         "“Aenean et nisl eget eros consectetur vestibulum vel id erat. Aliquam feugiat massa dui. Sed sagittis diam sit amet ante sodales semper. Aliquam commodo lorem laoreet ultricies ele. ”",
       src: img,
-      name: "Reemsh Kc",
+      name: "Happy",
       position: "CEO",
     },
     {
       comment:
         "“Aenean et nisl eget eros consectetur vestibulum vel id erat. Aliquam feugiat massa dui. Sed sagittis diam sit amet ante sodales semper. Aliquam commodo lorem laoreet ultricies ele. ”",
       src: img,
-      name: "Reemsh Kc",
+      name: "Happy",
       position: "CEO",
     },
     {
       comment:
         "“Aenean et nisl eget eros consectetur vestibulum vel id erat. Aliquam feugiat massa dui. Sed sagittis diam sit amet ante sodales semper. Aliquam commodo lorem laoreet ultricies ele. ”",
       src: img,
-      name: "Reemsh Kc",
+      name: "Happy",
       position: "CEO",
     },
   ];
@@ -47,7 +47,7 @@ const Testimonial = () => {
         <div className="p-5  ">
           <Slider {...settings}>
             {discription.map((val, idx) => (
-              <div className=" " idx={idx}>
+              <div key={idx}>
                 <div className="flex flex-col p-5 gap-3 ">
                   <div className="bg-white flex flex-col items-center justify-center p-4 rounded-md gap-2">
                     <div className="text-4xl text-green-500">

@@ -1,7 +1,11 @@
+import BreadCrums from "../Shop/BreadCrums/BreadCrums";
+import ContactBody from "./ContactBody/ContactBody";
+
 function Contact() {
   return (
     <>
-      <h1>Hello Contact</h1>
+      <BreadCrums />
+      <ContactBody />
     </>
   );
 }

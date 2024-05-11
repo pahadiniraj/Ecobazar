@@ -4,10 +4,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import FilterOption from "../FilterOption/FilterOption";
-const FilterProduct = ({ onGetSelect }) => {
+const FilterProduct = ({onGetSelect}) => {
   const handleOnChange = (event) => {
     onGetSelect(event.target.value);
-    
   };
 
   return (
@@ -29,6 +28,7 @@ const FilterProduct = ({ onGetSelect }) => {
                   <label htmlFor="filter-select">
                     <select
                       onChange={handleOnChange}
+                     
                       id="filter-select"
                       className=" focus:outline-none p-2 w-28 rounded-md"
                     >

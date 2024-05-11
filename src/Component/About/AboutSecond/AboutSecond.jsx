@@ -24,7 +24,10 @@ const AboutSecond = () => {
             </p>
             <div className=" grid grid-rows-3 grid-flow-col gap-3 mt-4 w-full">
               {Icon.map((value, index) => (
-                <div className="flex items-center justify-start gap-2 ">
+                <div
+                  className="flex items-center justify-start gap-2 "
+                  key={index}
+                >
                   <div className="bg-green-100 rounded-full p-2">
                     {value.icon}
                   </div>

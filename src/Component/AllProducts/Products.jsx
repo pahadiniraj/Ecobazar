@@ -1,5 +1,3 @@
-import React from "react";
-
 const Products = [
   {
     id: 1,
@@ -13,6 +11,7 @@ const Products = [
     stars: 4.4,
     reviews: 50,
     tag: "healthy",
+    Stock: true,
   },
   {
     id: 2,
@@ -26,6 +25,7 @@ const Products = [
     stars: 5,
     reviews: 50,
     tag: "lowfat",
+    Stock: true,
   },
   {
     id: 3,
@@ -37,6 +37,8 @@ const Products = [
     Prices: 200,
     stars: 4.4,
     reviews: 50,
+    tag: "vegetarian",
+    Stock: true,
   },
   {
     id: 4,
@@ -48,6 +50,7 @@ const Products = [
     prices: 300.99,
     stars: 4.4,
     reviews: 50,
+    Stock: true,
   },
   {
     id: 5,
@@ -71,6 +74,7 @@ const Products = [
     prices: 500,
     stars: 2.5,
     reviews: 50,
+    Stock:true,
   },
   {
     id: 7,

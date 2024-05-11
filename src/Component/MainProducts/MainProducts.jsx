@@ -3,8 +3,10 @@ import Products from "../AllProducts/Products";
 import Stars from "../Stars/Stars";
 import { GiShoppingBag } from "react-icons/gi";
 import Cards from "../Cards/Cards";
+import PopupCard from "../PopupCard/PopupCard";
 
 const MainProducts = ({ productList }) => {
+  const [showCard, setShowCard] = useState(false);
   return (
     <div className="py-4 pl-3">
       <div className=" grid grid-cols-3 gap-4  ">
@@ -18,6 +20,7 @@ const MainProducts = ({ productList }) => {
             price={menu.price}
             stars={menu.stars}
             reviews={menu.reviews}
+            Stock={menu.Stock}
           />
         ))}
       </div>
