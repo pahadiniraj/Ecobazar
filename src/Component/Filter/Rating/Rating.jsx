@@ -36,7 +36,6 @@ const Rating = ({ handleRating }) => {
       : [...rating, value];
     setRating(updatedRating);
     handleRating(updatedRating);
-    
   };
 
   return (
@@ -65,12 +64,12 @@ const Rating = ({ handleRating }) => {
                   onChange={(event) => handleChange(event.target.value)}
                   value={value.stars}
                 />
-                <label htmlFor={value.stars}>
+                <div htmlFor={value.stars}>
                   <Stars
                     stars={value.stars}
                     className={`flex gap-1 text-[#FF8A00]  items-center justify-start`}
                   />
-                </label>
+                </div>
               </div>
             ))}
           </div>

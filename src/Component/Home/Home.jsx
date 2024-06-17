@@ -10,9 +10,10 @@ import Video from "./Video/Video";
 import Testimonial from "./Testimonial/Testimonial";
 import Subscribe from "../Subscribe/Subscribe";
 import { useEffect, useState } from "react";
-
+import { useLocation } from "react-router-dom";
 function Home() {
   const [showSub, setShowSub] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,17 +23,18 @@ function Home() {
   }, []);
   return (
     <>
-      <CarouselEle />
+      <CarouselEle showNavPop={location.state?.showNavPop} />
+
       <Featured />
       <ProductIntro />
-      <CounterPage />
-      <BannerCom />
-      <Timer />
-      <FeaturedProduct />
-      <Testimonial />
-      <Video />
-      <News />
-      {showSub && <Subscribe onClose={() => setShowSub(false)} />}
+      {/* <CounterPage /> */}
+      {/* <BannerCom /> */}
+      {/* <Timer /> */}
+      {/* <FeaturedProduct /> */}
+      {/* <Testimonial /> */}
+      {/* <Video /> */}
+      {/* <News /> */}
+      {/* {showSub && <Subscribe onClose={() => setShowSub(false)} />} */}
     </>
   );
 }

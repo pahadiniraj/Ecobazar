@@ -6,7 +6,7 @@ const Banner = ({ name, para, price, middle, src, left, head, right }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/shop"); // corrected URL
+    navigate("/shop");
   };
 
   return (
@@ -25,10 +25,6 @@ const Banner = ({ name, para, price, middle, src, left, head, right }) => {
               } ${right ? "text-black flex flex-col justify-center gap-3 " : ""}
               ${middle ? "text-black flex flex-col  items-end px-4 gap-3 " : ""}
               `}
-              flex
-              flex-col
-              items-end
-              text-black
             >
               <div className="py-2 items-center">
                 <p className="text-xs">{head}</p>

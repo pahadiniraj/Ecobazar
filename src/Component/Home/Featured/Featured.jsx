@@ -6,9 +6,7 @@ import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
 function Featured() {
   const featuredItems = [
     {
-      logo: (
-        <LocalShippingOutlinedIcon sx={{ fontSize: 30, color: "#00e800" }} />
-      ),
+      logo: <LocalShippingOutlinedIcon className="text-lg  text-green-500" />,
       head: "Free Shipping",
       para: "Free shipping with discount",
     },
@@ -35,8 +33,8 @@ function Featured() {
 
   return (
     <>
-      <div className="  relative top-28 w-full ">
-        <div className="container mx-auto px-28 ">
+      <div className="  relative top-28 w-full hidden md:block ">
+        <div className="container mx-auto  ">
           <div className="flex justify-center border border-solid  border-slate-800.[.1] rounded-lg">
             {featuredItems.map((item, idx) => (
               <div
@@ -47,8 +45,8 @@ function Featured() {
                 <div className="h-16 w-16 rounded-full flex items-center justify-center  bg-white border border-slate-800.[.1]  ">
                   {item.logo}
                 </div>
-                <h2 className="font-bold text-sm    ">{item.head}</h2>
-                <p className="font-normal text-xs ">{item.para}</p>
+                <h2 className="font-bold   ">{item.head}</h2>
+                <p className="font-normal  ">{item.para}</p>
               </div>
             ))}
           </div>

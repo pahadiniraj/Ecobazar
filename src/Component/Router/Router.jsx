@@ -1,10 +1,5 @@
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  createRoutesFromChildren,
-  createRoutesFromElements,
-} from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
+
 import Layout from "../../Layout";
 import Home from "../Home/Home";
 import Shop from "../Shop/Shop";
@@ -43,12 +38,6 @@ const router = createBrowserRouter([
       {
         path: "shop",
         element: <Shop />,
-        children: [
-          {
-            path: "",
-            element: <BreadCrums />,
-          },
-        ],
       },
       {
         path: "pages",
@@ -61,12 +50,6 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About></About>,
-        children: [
-          {
-            path: "",
-            element: <BreadCrums />,
-          },
-        ],
       },
       {
         path: "contact",

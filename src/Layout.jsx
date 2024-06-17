@@ -14,8 +14,8 @@ function Layout() {
         <MainNav></MainNav>
         <PostNav></PostNav>
         <Outlet></Outlet>
-        <UpperFooter></UpperFooter>
-        <LowerFooter></LowerFooter>
+        {/* <UpperFooter></UpperFooter>
+        <LowerFooter></LowerFooter> */}
       </div>
     </>
   );

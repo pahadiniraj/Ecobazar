@@ -48,9 +48,9 @@ const SaleProduct = () => {
                   <p className="text-sm font-medium">{val.cost}</p>
                   <s className="text-sm text-[#999999] ">{val.discount}</s>
                 </div>
-                <p>
+              
                   <Stars stars={val.stars} className={`text-[#FF8A00] flex`} />
-                </p>
+                
               </div>
             </div>
           ))}

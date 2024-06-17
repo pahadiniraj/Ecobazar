@@ -4,7 +4,6 @@ import UnderFilter from "../UnderFilter/UnderFilter";
 import Products from "../AllProducts/Products";
 import { useState, useEffect } from "react";
 import Pagenation from "../Pagenation/Pagenation";
-import { Outlet } from "react-router-dom";
 
 function Shop() {
   const [select, setSelect] = useState("");
@@ -27,24 +26,28 @@ function Shop() {
       filteredList = filteredList.filter(
         (product) => product.description === select
       );
+      setFilteredProducts(filteredList);
     }
 
     if (categories) {
       filteredList = filteredList.filter(
         (product) => product.category === categories
       );
+      setFilteredProducts(filteredList);
     }
 
     if (rating.length) {
       filteredList = filteredList.filter((product) =>
         rating.includes(parseInt(product.stars).toString())
       );
+      setFilteredProducts(filteredList);
     }
 
     if (tag.length) {
       filteredList = filteredList.filter((product) =>
         tag.includes(product.tag)
       );
+      setFilteredProducts(filteredList);
     }
 
     if (price.length) {
@@ -53,6 +56,7 @@ function Shop() {
           parseInt(product.prices) > price[0] &&
           parseInt(product.prices) < price[1]
       );
+      setFilteredProducts(filteredList);
     }
 
     setFilteredProducts(
@@ -84,9 +88,13 @@ function Shop() {
     setPrice(value);
   };
 
+  const handleCount = () => {
+    return filteredProducts.length;
+  };
+
   return (
     <>
-      <FilterProduct onGetSelect={onListSelected} />
+      <FilterProduct onGetSelect={onListSelected} length={handleCount()} />
       <UnderFilter
         handleCatagories={handleCatagories}
         handleRating={handleRating}

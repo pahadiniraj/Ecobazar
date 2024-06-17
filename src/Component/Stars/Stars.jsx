@@ -1,30 +1,31 @@
 import React from "react";
-import { IoIosStar } from "react-icons/io";
-import { IoIosStarHalf } from "react-icons/io";
-import { IoIosStarOutline } from "react-icons/io";
+import PropTypes from "prop-types";
+import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from "react-icons/io";
 
 const Stars = ({ stars, reviews, className }) => {
   const ratingStars = Array.from({ length: 5 }, (elem, index) => {
     let number = index + 0.5;
-    return (
-      <span key={index}>
-        {stars >= index + 1 ? (
-          <IoIosStar />
-        ) : stars >= number ? (
-          <IoIosStarHalf />
-        ) : (
-          <IoIosStarOutline />
-        )}
-      </span>
+    return stars >= index + 1 ? (
+      <IoIosStar key={index} />
+    ) : stars >= number ? (
+      <IoIosStarHalf key={index} />
+    ) : (
+      <IoIosStarOutline key={index} />
     );
   });
 
   return (
-    <div>
-      <p className={className}>{ratingStars}</p>
+    <div className={className}>
+      {ratingStars}
+      {reviews && <span>({reviews} reviews)</span>}
     </div>
   );
 };
 
-// className="flex text-[#FF8A00]"
+Stars.propTypes = {
+  stars: PropTypes.number.isRequired,
+  reviews: PropTypes.number,
+  className: PropTypes.string,
+};
+
 export default Stars;
