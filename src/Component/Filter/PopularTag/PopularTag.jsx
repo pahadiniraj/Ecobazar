@@ -82,9 +82,9 @@ const PopularTag = ({ handleTag }) => {
           onClick={handleTagClick}
           className="flex w-full justify-between"
         >
-          <div className="text-base font-medium">Show Tag</div>
-          <div className="text-xl">
-            {showTag ? <IoIosArrowDown /> : <IoIosArrowUp />}
+          <div className="text-xs font-medium">Show Tag</div>
+          <div className="text-xs">
+            {showTag ? <IoIosArrowUp /> : <IoIosArrowDown />}
           </div>
         </button>
         <div>
@@ -93,7 +93,7 @@ const PopularTag = ({ handleTag }) => {
               {tags.map((value, index) => (
                 <button
                   key={index}
-                  className={`p-2 text-xs bg-[#F2F2F2]  rounded-2xl m-1 ${
+                  className={`p-1 text-xxxs bg-[#F2F2F2]  rounded-2xl m-1 ${
                     selectedTags.includes(value.tag)
                       ? "bg-green-600 text-white"
                       : ""

@@ -110,8 +110,8 @@ const AnimatedNav = ({ handleClose }) => {
                   }
                 >
                   <div className="flex gap-2  justify-center items-center">
-                    <div className="xxs:text-4xl">{items.logo}</div>
-                    <div className="xxs:text-xl mt-3">{items.name}</div>
+                    <div className="xxxs:text-4xl">{items.logo}</div>
+                    <div className="xxxs:text-xl mt-3">{items.name}</div>
                   </div>
                 </NavLink>
               </motion.div>

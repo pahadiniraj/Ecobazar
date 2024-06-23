@@ -37,13 +37,13 @@ function ProductIntro() {
   };
 
   return (
-    <div className="bg-[#EDF2EE] md:py-20 w-full ">
-      <div className="">
-        <div className="flex flex-col justify-center items-center gap-3 pt-5 ">
-          <h3 className=" text-lg font-semibold text-center">
+    <div className="bg-[#EDF2EE]  w-full mt-5 py-20  ">
+      <div className="xs:container xs:mx-auto ">
+        <div className="flex flex-col justify-center items-center  ">
+          <h3 className=" xxs:text-lg xs:text-2xl md:text-4xl font-semibold text-center md:mt-10 mt-5">
             Introducing Our Product
           </h3>
-          <div className="flex justify-center  gap-3 text-xxxs xxs:text-xxs">
+          <div className="flex justify-center  gap-3 text-xxs xxs:text-xxs xs:text-xs my-5">
             {cat.map((category, index) => (
               <button
                 key={index}
@@ -63,7 +63,7 @@ function ProductIntro() {
             </NavLink>
           </div>
         </div>
-        {/* <div className="grid grid-cols-4 px-28">
+        <div className="grid grid-cols-4 xxxs:px-5   xxxs:grid-cols-2  xs:grid-cols-3  md:grid-cols-4">
           {items.map((menu, index) => (
             <Cards
               key={index}
@@ -75,7 +75,7 @@ function ProductIntro() {
               reviews={menu.reviews}
             />
           ))}
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -93,7 +93,7 @@ function Shop() {
   };
 
   return (
-    <>
+    <div className="md:container md:mx-auto    md:px-8 xxxs:px-5 xxs:px-10 ">
       <FilterProduct onGetSelect={onListSelected} length={handleCount()} />
       <UnderFilter
         handleCatagories={handleCatagories}
@@ -106,7 +106,7 @@ function Shop() {
         handlePageClick={handlePageClick}
         totalPages={Math.ceil(Products.length / 10)}
       />
-    </>
+    </div>
   );
 }
 

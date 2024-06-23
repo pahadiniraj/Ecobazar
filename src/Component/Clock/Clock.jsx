@@ -9,7 +9,7 @@ const Clock = () => {
 
   useEffect(() => {
     const setTimer = () => {
-      const countDownDate = new Date("Jun 13, 2024").getTime();
+      const countDownDate = new Date("July 18, 2024").getTime();
       const interval = setInterval(() => {
         const now = new Date().getTime();
         const distance = countDownDate - now;

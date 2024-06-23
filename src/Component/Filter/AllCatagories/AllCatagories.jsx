@@ -42,14 +42,14 @@ const AllCatagories = ({ handleCatagories }) => {
   };
 
   return (
-    <div className="border-b border-slate-200  py-2 ">
-      <div>
+    <div className="border-b border-slate-200 py-3 ">
+      <div className="">
         <button
           className="w-full text-left flex items-center justify-between "
           onClick={handleCatagoriesClick}
         >
-          <div className="text-base font-medium ">All Catagories</div>
-          <div className="text-xl">
+          <div className="text-xs font-medium md:text-lg ">All Catagories</div>
+          <div className="text-xs md:text-lg">
             {showList ? <IoIosArrowUp /> : <IoIosArrowDown />}
           </div>
         </button>
@@ -57,7 +57,7 @@ const AllCatagories = ({ handleCatagories }) => {
       {showList && (
         <div className="py-2 ">
           {list.map((val, idx) => (
-            <div className="p-1 text-sm flex items-center" key={idx}>
+            <div className="py-1 text-xs flex items-center" key={idx}>
               <input
                 type="radio"
                 id={idx}

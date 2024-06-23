@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 
 function LowerFooter() {
   return (
-    <footer>
-      <div className="bg-[#1A1A1A] text-white  ">
-        <div className="container mx-auto py-10 px-28 ">
-          <div className="flex justify-between  border-b border-slate-100 pb-8">
-            <span className="w-[26%] ">
-              <h3 className="mb-4 text-sm font-medium">About Shopery</h3>
+    <footer className="">
+      <div className="bg-[#1A1A1A] text-white pt-5 ">
+        <div className=" px-10 md:container md:mx-auto ">
+          <div className="flex justify-between flex-col md:flex-row md:justify-between  border-b border-slate-100 py-5 ">
+            <span className=" text-center md:text-start md:w-1/4">
+              <h3 className=" text-sm font-medium md:mb-3">About Shopery</h3>
               <p className="text-slate-400 text-xs mb-4">
                 Morbi cursus porttitor enim lobortis molestie. Duis gravida
                 turpis dui, eget bibendum magna congue nec.
@@ -18,78 +18,134 @@ function LowerFooter() {
                 <span>Proxy@gmail.com</span>
               </p>
             </span>
-            <div className=" flex flex-col gap-2">
-              <h3 className="mb-2 text-sm font-medium">My Account</h3>
+            <div className="flex  py-5 md:py-0 justify-center xs:justify-center gap-10 xs:gap-32 md:gap-5">
+              <div className=" flex flex-col gap-2 ">
+                <h3 className="mb-2 text-sm font-medium">My Account</h3>
 
-              {[
-                "My Account",
-                "Order History",
-                "Shopping Cart",
-                "Wishlist",
-                "Setting",
-              ].map((va, index) => (
-                <li className="flex text-xs font-normal" key={index}>
-                  {index === 0 && (
-                    <NavLink
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400 "}`
-                      }
-                      to="/about"
-                    >
-                      {va}{" "}
-                    </NavLink>
-                  )}
-                  {index === 1 && (
-                    <NavLink
-                      to="order"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400"}`
-                      }
-                    >
-                      {va}{" "}
-                    </NavLink>
-                  )}
-                  {index === 2 && (
-                    <NavLink
-                      to="cart"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white " : "text-slate-400"}`
-                      }
-                    >
-                      {va}
-                    </NavLink>
-                  )}
-                  {index === 3 && (
-                    <NavLink
-                      to="wishlist"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400"}`
-                      }
-                    >
-                      {va}{" "}
-                    </NavLink>
-                  )}
-                  {index === 4 && (
-                    <NavLink
-                      to="setting"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400"}`
-                      }
-                    >
-                      {va}{" "}
-                    </NavLink>
-                  )}
-                </li>
-              ))}
-            </div>
-            <div className="flex flex-col gap-2">
-              <h2 className="mb-2 text-sm font-medium">Helps</h2>
-              {["contact", "faqs", "Terms & Condition", "Privacy Policy"].map(
-                (val, index) => (
-                  <li key={index} className="flex font-normal text-xs">
+                {[
+                  "My Account",
+                  "Order History",
+                  "Shopping Cart",
+                  "Wishlist",
+                  "Setting",
+                ].map((va, index) => (
+                  <li className="flex  text-xxs font-normal " key={index}>
                     {index === 0 && (
                       <NavLink
-                        to="contact"
+                        className={({ isActive }) =>
+                          `${isActive ? "text-white" : "text-slate-400 "}`
+                        }
+                        to="/about"
+                      >
+                        {va}{" "}
+                      </NavLink>
+                    )}
+                    {index === 1 && (
+                      <NavLink
+                        to="order"
+                        className={({ isActive }) =>
+                          `${isActive ? "text-white" : "text-slate-400"}`
+                        }
+                      >
+                        {va}{" "}
+                      </NavLink>
+                    )}
+                    {index === 2 && (
+                      <NavLink
+                        to="cart"
+                        className={({ isActive }) =>
+                          `${isActive ? "text-white " : "text-slate-400"}`
+                        }
+                      >
+                        {va}
+                      </NavLink>
+                    )}
+                    {index === 3 && (
+                      <NavLink
+                        to="wishlist"
+                        className={({ isActive }) =>
+                          `${isActive ? "text-white" : "text-slate-400"}`
+                        }
+                      >
+                        {va}{" "}
+                      </NavLink>
+                    )}
+                    {index === 4 && (
+                      <NavLink
+                        to="setting"
+                        className={({ isActive }) =>
+                          `${isActive ? "text-white" : "text-slate-400"}`
+                        }
+                      >
+                        {va}{" "}
+                      </NavLink>
+                    )}
+                  </li>
+                ))}
+              </div>
+              <div className="flex flex-col gap-2">
+                <h2 className="mb-2 text-sm font-medium">Helps</h2>
+                {["contact", "faqs", "Terms & Condition", "Privacy Policy"].map(
+                  (val, index) => (
+                    <li key={index} className="flex font-normal text-xxs">
+                      {index === 0 && (
+                        <NavLink
+                          to="contact"
+                          className={({ isActive }) =>
+                            `${isActive ? "text-white" : "text-slate-400"}`
+                          }
+                        >
+                          {val}
+                        </NavLink>
+                      )}
+
+                      {index === 1 && (
+                        <NavLink
+                          to="faqs"
+                          className={({ isActive }) =>
+                            `${isActive ? "text-white" : "text-slate-400"}`
+                          }
+                        >
+                          {val}
+                        </NavLink>
+                      )}
+                      {index === 2 && (
+                        <NavLink
+                          to="termsandcondition"
+                          className={({ isActive }) =>
+                            `${isActive ? "text-white" : "text-slate-400"}`
+                          }
+                        >
+                          {val}
+                        </NavLink>
+                      )}
+                      {index === 3 && (
+                        <NavLink
+                          to="privacypolicy"
+                          className={({ isActive }) =>
+                            `${isActive ? "text-white" : "text-slate-400"}`
+                          }
+                        >
+                          {val}
+                        </NavLink>
+                      )}
+                    </li>
+                  )
+                )}
+              </div>
+              <div className="flex flex-col gap-2">
+                <h2 className="mb-2 text-sm font-medium">Proxy</h2>
+                {[
+                  "About",
+                  "Shop",
+                  "Product",
+                  "Products Detail",
+                  "Track Order",
+                ].map((val, index) => (
+                  <li key={index} className="flex text-xxs font-normal ">
+                    {index === 0 && (
+                      <NavLink
+                        to="about"
                         className={({ isActive }) =>
                           `${isActive ? "text-white" : "text-slate-400"}`
                         }
@@ -97,10 +153,9 @@ function LowerFooter() {
                         {val}
                       </NavLink>
                     )}
-
                     {index === 1 && (
                       <NavLink
-                        to="faqs"
+                        to="shop"
                         className={({ isActive }) =>
                           `${isActive ? "text-white" : "text-slate-400"}`
                         }
@@ -110,7 +165,7 @@ function LowerFooter() {
                     )}
                     {index === 2 && (
                       <NavLink
-                        to="termsandcondition"
+                        to="product"
                         className={({ isActive }) =>
                           `${isActive ? "text-white" : "text-slate-400"}`
                         }
@@ -120,7 +175,17 @@ function LowerFooter() {
                     )}
                     {index === 3 && (
                       <NavLink
-                        to="privacypolicy"
+                        to="productdetail"
+                        className={({ isActive }) =>
+                          `${isActive ? "text-white" : "text-slate-400"}`
+                        }
+                      >
+                        {val}
+                      </NavLink>
+                    )}
+                    {index === 4 && (
+                      <NavLink
+                        to="trackorder"
                         className={({ isActive }) =>
                           `${isActive ? "text-white" : "text-slate-400"}`
                         }
@@ -129,76 +194,15 @@ function LowerFooter() {
                       </NavLink>
                     )}
                   </li>
-                )
-              )}
-            </div>
-            <div className="flex flex-col gap-2">
-              <h2 className="mb-2 text-sm font-medium">Proxy</h2>
-              {[
-                "About",
-                "Shop",
-                "Product",
-                "Products Detail",
-                "Track Order",
-              ].map((val, index) => (
-                <li key={index} className="flex text-xs font-normal ">
-                  {index === 0 && (
-                    <NavLink
-                      to="about"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400"}`
-                      }
-                    >
-                      {val}
-                    </NavLink>
-                  )}
-                  {index === 1 && (
-                    <NavLink
-                      to="shop"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400"}`
-                      }
-                    >
-                      {val}
-                    </NavLink>
-                  )}
-                  {index === 2 && (
-                    <NavLink
-                      to="product"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400"}`
-                      }
-                    >
-                      {val}
-                    </NavLink>
-                  )}
-                  {index === 3 && (
-                    <NavLink
-                      to="productdetail"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400"}`
-                      }
-                    >
-                      {val}
-                    </NavLink>
-                  )}
-                  {index === 4 && (
-                    <NavLink
-                      to="trackorder"
-                      className={({ isActive }) =>
-                        `${isActive ? "text-white" : "text-slate-400"}`
-                      }
-                    >
-                      {val}
-                    </NavLink>
-                  )}
-                </li>
-              ))}
+                ))}
+              </div>
             </div>
 
-            <span>
-              <h3 className="mb-6 text-sm">Download our Mobile App</h3>
-              <span className="flex gap-6 ">
+            <div className=" my-5 md:my-0  ">
+              <h3 className="my-3 text-sm text-center">
+                Download our Mobile App
+              </h3>
+              <div className="flex gap-6 justify-center">
                 <div className="flex gap-2 bg-slate-600 rounded p-2 ">
                   <span className=" flex justify-center items-center">
                     <svg
@@ -239,11 +243,11 @@ function LowerFooter() {
                     <p className="text-sm ">Google Play</p>
                   </span>
                 </div>
-              </span>
-            </span>
+              </div>
+            </div>
           </div>
-          <div className="mt-10 flex justify-between ">
-            <div className="flex gap-3">
+          <div className="py-10 flex flex-col justify-between  gap-4 ">
+            <div className="flex gap-3 justify-center">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-green-500 ">
                 <svg
                   width="10"
@@ -315,8 +319,8 @@ function LowerFooter() {
                 Ecobazar eCommerce © 2021. All Rights Reserved by Niraj
               </p>
             </div>
-            <div>
-              <span>
+            <div className="flex justify-center">
+              <div className="  xxxs:hidden md:block ">
                 <svg
                   width="277"
                   height="32"
@@ -382,7 +386,7 @@ function LowerFooter() {
                   <rect
                     x="159.5"
                     y="0.5"
-                    width="44"
+                    width="40"
                     height="30.7647"
                     rx="4.79412"
                     fill="#1A1A1A"
@@ -409,7 +413,7 @@ function LowerFooter() {
                   <rect
                     x="212.5"
                     y="0.5"
-                    width="64"
+                    width="60"
                     height="31"
                     rx="4.79412"
                     fill="#1A1A1A"
@@ -448,15 +452,15 @@ function LowerFooter() {
                   <defs>
                     <clipPath id="clip0_3902_1827">
                       <rect
-                        width="11"
-                        height="11"
+                        width="10"
+                        height="10"
                         fill="white"
                         transform="translate(217 4)"
                       />
                     </clipPath>
                   </defs>
                 </svg>
-              </span>
+              </div>
             </div>
           </div>
         </div>

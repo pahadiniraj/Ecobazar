@@ -35,18 +35,20 @@ const News = () => {
 
   return (
     <div className=" w-full  ">
-      <div className="container mx-auto  px-28 ">
-        <h2 className="text-center m-4 text-2xl font-semibold">Latest News</h2>
-        <div className=" p-3 ">
-          <div className="grid grid-cols-3 gap-4">
+      <div className="md:container md:mx-auto  py-10">
+        <h2 className="text-center  md:text-2xl text-xl font-semibold mb-5">
+          Latest News
+        </h2>
+        <div className=" px-5">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4">
             {obj.map((val, idx) => (
               <div
                 key={idx}
-                className=" p-4 gap-1 flex flex-col shadow-lg  rounded-md "
+                className=" p-4 gap-1 flex flex-col shadow-xl border   rounded-md "
               >
-                <div className="bg-red-200 relative w-full">
-                  <img src={val.src} alt="img"></img>
-                  <div className=" bg-blue-200 w-14 h-14 absolute bottom-4 left-4 flex items-center justify-center opacity-80 rounded-md flex-col">
+                <div className=" relative w-full">
+                  <img src={val.src} alt="img" className="w-full"></img>
+                  <div className="  w-14 h-14 absolute bottom-4 left-4 flex items-center justify-center opacity-80 rounded-md flex-col bg-slate-100">
                     <p className="font-semibold text-xl">{val.date}</p>
                     <p className="text-sm">{val.month}</p>
                   </div>

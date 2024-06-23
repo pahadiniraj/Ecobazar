@@ -14,13 +14,14 @@ const UnderFilter = ({
   handleTag,
   productList,
 }) => {
-
-
   return (
     <div className="w-full">
-      <div className="container  mx-auto px-32">
-        <div className="w-full flex">
-          <div className="w-96 p-2">
+      <div className="">
+        <div
+          className="w-full flex xxxs:gap-5
+          "
+        >
+          <div className="w-3/6 xxs:w-2/6 py-5   md:block">
             <AllCatagories handleCatagories={handleCatagories} />
             <Rating handleRating={handleRating} />
             <Price handleSelectedPrice={handleSelectedPrice} />

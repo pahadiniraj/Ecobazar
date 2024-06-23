@@ -60,19 +60,19 @@ const FeaturedProduct = () => {
   ];
 
   return (
-    <div className="w-full py-8 ">
-      <div className="container mx-auto  ">
-        <div className="flex justify-center items-center mt-20 text-2xl  font-semibold">
+    <div className="w-full  flex items-center justify-center py-10">
+      <div className=" md:container md:mx-auto   ">
+        <div className="flex justify-center items-center  text-2xl  font-semibold">
           <h2 className="pb-3">FEATURED PRODUCT</h2>
         </div>
-        <div className=" grid grid-cols-5 gap-0 px-28 py-5 ">
+        <div className=" grid grid-cols-2 xs:grid-cols-3 md:grid-cols-5 px-8 ">
           {featuredMenu.map((menu, index) => (
             <div
               key={index}
-              className={`border group  hover:border-green-600 shadow-md hover:shadow-green-300`}
+              className={`border group  hover:border-green-600 shadow-md hover:shadow-green-300 relative`}
             >
               {menu.discount ? (
-                <div className="bg-red-600 rounded m-2 text-white h-5 w-20 text-xs px-1 text-center py-1 flex justify-center items-center">
+                <div className="bg-red-600 rounded m-2 text-white h-5 w-14 text-xxs px-1 text-center py-1 flex justify-center items-center">
                   {menu.discount}
                 </div>
               ) : (
@@ -85,14 +85,17 @@ const FeaturedProduct = () => {
               </div>
               <div className="flex justify-between m-3 ">
                 <div className="">
-                  <p className="text-slate-500 text-xs group-hover:text-[#2C742F]">
+                  <p className="text-slate-500 text-xxs group-hover:text-[#2C742F]">
                     {menu.name}
                   </p>
-                  <p className="font-medium text-sm">{menu.price}</p>
-                  <Stars stars={menu.stars} className={`flex text-[#FF8A00]`} />
+                  <p className="font-medium text-xs">{menu.price}</p>
+                  <Stars
+                    stars={menu.stars}
+                    className={`flex text-[#FF8A00] text-xs`}
+                  />
                 </div>
-                <div className="bg-white border border-slate-400 w-8 h-8 flex justify-center items-center rounded-full mt-2 mx-2 group-hover:bg-[#00B207] group-hover:text-white">
-                  <GiShoppingBag className="text-xl " />
+                <div className="bg-white border border-slate-400 w-6 h-6 xs:w-8 xs:h-8 flex justify-center items-center rounded-full  group-hover:bg-[#00B207] group-hover:text-white absolute right-1 bottom-2">
+                  <GiShoppingBag className="text-sm xs:text-base " />
                 </div>
               </div>
             </div>

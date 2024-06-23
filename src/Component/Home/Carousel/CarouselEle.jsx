@@ -106,7 +106,7 @@ function CarouselEle({ showNavPop }) {
             )}
           </AnimatePresence>
 
-          <div className="xxs:w-full xs:w-4/6  mt-5">
+          <div className="xxs:w-full xs:w-4/6   mt-5">
             <Slider {...settings}>
               {banner.map((val, idx) => (
                 <div className="py-2 mb-2 w-full" key={idx}>

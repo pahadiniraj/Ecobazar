@@ -33,20 +33,20 @@ function Featured() {
 
   return (
     <>
-      <div className="  relative top-28 w-full hidden md:block ">
+      <div className="  relative top-24 w-full hidden md:block  ">
         <div className="container mx-auto  ">
-          <div className="flex justify-center border border-solid  border-slate-800.[.1] rounded-lg">
+          <div className="flex justify-center border border-solid  border-slate-800.[.1] rounded-lg ">
             {featuredItems.map((item, idx) => (
               <div
                 key={idx}
                 className="  border-r border-solid  border-slate-800.[.1] rounded hover:bg-[#00B207] 
-            hover:text-white transition duration-200 ease-in-out w-full  flex flex-col p-8 gap-2 bg-white"
+            hover:text-white transition duration-200 ease-in-out w-full  flex flex-col  bg-white md:py-3 md:px-4 gap-3 "
               >
                 <div className="h-16 w-16 rounded-full flex items-center justify-center  bg-white border border-slate-800.[.1]  ">
                   {item.logo}
                 </div>
-                <h2 className="font-bold   ">{item.head}</h2>
-                <p className="font-normal  ">{item.para}</p>
+                <h2 className="font-bold   md:text-sm ">{item.head}</h2>
+                <p className="font-normal md:text-xxs ">{item.para}</p>
               </div>
             ))}
           </div>

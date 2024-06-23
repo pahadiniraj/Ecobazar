@@ -48,24 +48,24 @@ const Video = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="container mx-auto px-32  ">
-        <div className=" flex justify-center items-center text-white ">
-          <video className="rounded-md" ref={vidRef}>
+      <div className=" ">
+        <div className=" flex justify-center items-center text-white p-5 md:container md:mx-auto  ">
+          <video className="rounded-md " ref={vidRef}>
             <source src={video} />
             <div className="w-50 h-50 bg-red-200"></div>
           </video>
           {showControls && (
             <div className="absolute items-center flex justify-center flex-col w-1/4">
               {showText && (
-                <div className="text-2xl text-center font-semibold">
+                <div className="text-xxs xs:text-xl text-center ">
                   We’re the Best Organic Farm in the World
                 </div>
               )}
               <button onClick={handleClick}>
                 {isplaying ? (
-                  <PiPauseCircleThin className="text-7xl" />
+                  <PiPauseCircleThin className="text-3xl xs:text-5xl" />
                 ) : (
-                  <PiPlayCircleThin className="text-7xl " />
+                  <PiPlayCircleThin className="text-3xl  xs:text-5xl" />
                 )}
               </button>
             </div>

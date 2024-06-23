@@ -11,7 +11,7 @@ const Banner = ({ name, para, price, middle, src, left, head, right }) => {
 
   return (
     <div className="   w-full ">
-      <div className="  ">
+      <div className=" ">
         <div className="p-3">
           <div
             style={{ backgroundImage: `url(${src})` }}
@@ -23,10 +23,12 @@ const Banner = ({ name, para, price, middle, src, left, head, right }) => {
                   ? "text-white flex flex-col justify-center px-4 gap-2"
                   : "  "
               } ${right ? "text-black flex flex-col justify-center gap-3 " : ""}
-              ${middle ? "text-black flex flex-col  items-end px-4 gap-3 " : ""}
+              ${
+                middle ? "text-black flex flex-col  items-end  px-4 gap-3 " : ""
+              }
               `}
             >
-              <div className="py-2 items-center">
+              <div className={`py-2  ${middle ? "text-end " : ""}`}>
                 <p className="text-xs">{head}</p>
                 <h2 className="text-xl font-semibold w-[140px]">{name}</h2>
                 <span className="flex gap-1 items-center">

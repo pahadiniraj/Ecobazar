@@ -3,7 +3,7 @@ import img from "../../assets/FilterDisImg/Banner.png";
 import AddButton from "../Button/AddButton";
 const FilterDiscount = () => {
   return (
-    <div className="my-2">
+    <div className="my-2 ">
       <div
         style={{ backgroundImage: `url(${img})` }}
         className="  text-center  rounded-xl bg-top "

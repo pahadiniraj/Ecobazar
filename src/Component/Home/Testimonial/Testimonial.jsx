@@ -30,21 +30,68 @@ const Testimonial = () => {
     },
   ];
 
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "none", background: "red" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "none", background: "green" }}
+        onClick={onClick}
+      />
+    );
+  }
+
   const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024, // For screens larger than 1024px
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768, // For screens between 768px and 1024px
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // For screens less than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
-    <div className="bg-[#EDF2EE] w-full py-10  ">
-      <div className="container mx-auto px-28 py-10 ">
-        <h1 className="text-center font-semibold text-2xl">
+    <div className="bg-[#EDF2EE] w-full py-5  ">
+      <div className=" md:container md:mx-auto  ">
+        <h1 className="text-center font-semibold text-xl">
           What our Clients Says
         </h1>
-        <div className="p-5  ">
+        <div className="px-5 w-full ">
           <Slider {...settings}>
             {discription.map((val, idx) => (
               <div key={idx}>

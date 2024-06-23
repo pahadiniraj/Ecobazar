@@ -9,7 +9,7 @@ const MainProducts = ({ productList }) => {
   const [showCard, setShowCard] = useState(false);
   return (
     <div className="py-4 pl-3">
-      <div className=" grid grid-cols-3 gap-4  ">
+      <div className=" grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4  ">
         {productList.map((menu, index) => (
           <Cards
             className={`rounded-lg`}

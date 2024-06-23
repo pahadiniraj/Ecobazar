@@ -45,16 +45,18 @@ const Rating = ({ handleRating }) => {
           onClick={handleRatingClick}
           className="flex w-full justify-between "
         >
-          <div className="text-medium font-medium">Rating </div>
-          <div className="text-xl">
-            {showRating ? <IoIosArrowDown /> : <IoIosArrowUp />}
+          <div className="text-medium font-medium text-xs md:text-xl">
+            Rating{" "}
+          </div>
+          <div className="text-xs md:text-lg">
+            {showRating ? <IoIosArrowUp /> : <IoIosArrowDown />}
           </div>
         </button>
         {showRating && (
-          <div>
+          <div className="">
             {listStar.map((value, index) => (
               <div
-                className="flex justify-start items-center gap-2 p-2"
+                className="flex justify-start items-center gap-2 py-2"
                 key={index}
               >
                 <input

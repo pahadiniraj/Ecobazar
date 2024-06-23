@@ -27,13 +27,13 @@ function Home() {
 
       <Featured />
       <ProductIntro />
-      {/* <CounterPage /> */}
-      {/* <BannerCom /> */}
-      {/* <Timer /> */}
-      {/* <FeaturedProduct /> */}
-      {/* <Testimonial /> */}
-      {/* <Video /> */}
-      {/* <News /> */}
+      <CounterPage />
+      <BannerCom />
+      <Timer />
+      <FeaturedProduct />
+      <Testimonial />
+      <Video />
+      <News />
       {/* {showSub && <Subscribe onClose={() => setShowSub(false)} />} */}
     </>
   );

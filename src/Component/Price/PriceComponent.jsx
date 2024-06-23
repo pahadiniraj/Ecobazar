@@ -24,8 +24,8 @@ const PriceComponent = ({ handleSelectedPrice }) => {
       />
       <div>
         <p className=" text-sm">
-          <span className="text-[#4D4D4D]">price : </span>
-          <span className=" font-medium">
+          <span className="text-[#4D4D4D] text-xs  md:text-base">price : </span>
+          <span className=" font-medium text-xs  md:text-base">
             {sliderValue[0]} -{sliderValue[1]}
           </span>
         </p>

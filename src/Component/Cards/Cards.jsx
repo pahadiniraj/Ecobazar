@@ -41,43 +41,37 @@ const Cards = ({
         className={`bg-white border group  hover:border-green-600 shadow-md hover:shadow-green-300 relative ${className}`}
       >
         {discount ? (
-          <div className="bg-red-600 rounded m-2 text-white w-1/3  text-xs  text-center  flex justify-center items-center py-0.5">
+          <div className="bg-red-600 rounded m-3 text-white w-[80px] text-xxs xs:text-xs   text-center  flex justify-center items-center ">
             {discount}
           </div>
         ) : (
-          <div className="rounded m-4 text-white h-1 w-16 text-sm px-1"></div>
+          <div className="bg-slate-500 rounded m-3 text-white w-[80px]  text-xxs   text-center  flex justify-center items-center    xs:text-xs ">
+            Out of Stock
+          </div>
         )}
-
-        {Stock
-          ? ""
-          : !discount && (
-              <div className="bg-slate-500 rounded  text-white w-2/5 py-0.5 text-xs   text-center  flex justify-center items-center absolute top-2  left-3 ">
-                Out of Stock
-              </div>
-            )}
 
         <div className="   flex items-center justify-center">
           <div
-            className="w-[330px]  cursor-pointer"
+            className="w-[130px] xs:w-[300px]  cursor-pointer"
             onClick={() => setShowPopup(!showPopup)}
           >
             <img src={image} alt={name} />
           </div>
         </div>
-        <div className="flex justify-between mx-4 my-2  ">
+        <div className="flex justify-between mx-2 ">
           <div className="">
             <p
-              className="text-slate-500 text-xs group-hover:text-[#2C742F] cursor-pointer"
+              className="text-slate-500 text-xxs xs:text-xs group-hover:text-[#2C742F] cursor-pointer"
               onClick={() => setShowPopup(!showPopup)}
             >
               {name}
             </p>
-            <p className="font-medium text-sm">{price}</p>
+            <p className="font-medium text-xs xs:text-base">{price}</p>
 
             <Stars
               stars={stars}
               reviews={reviews}
-              className={`flex text-[#FF8A00]`}
+              className={`flex text-[#FF8A00] items-center text-xs xs:text-base py-1`}
             />
           </div>
           {hover && (
@@ -106,12 +100,12 @@ const Cards = ({
           )}
 
           <button
-            className={` border border-slate-400 w-8 h-8 flex justify-center items-center rounded-full mt-2 mx-2  absolute bottom-4 right-3 cursor-pointer group-hover:bg-green-600  group-hover:text-white ${
+            className={` border border-slate-400 xxxs:w-6 xxxs:h-6 xxs:w-8 xxs:h-8 md:w-10 md:h-10 flex justify-center items-center rounded-full   absolute bottom-4 right-3 cursor-pointer group-hover:bg-green-600  group-hover:text-white ${
               cartClicked ? "bg-blue-700 text-white" : ""
             }`}
             onClick={handleCartClicked}
           >
-            <GiShoppingBag className={`text-xl `} />
+            <GiShoppingBag className={`text-md xxs:text-lg md:text-xl `} />
           </button>
         </div>
       </div>

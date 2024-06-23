@@ -53,8 +53,8 @@ export const BannerCom = () => {
 
   return (
     <>
-      <div className="w-full ">
-        <div className="flex container mx-auto px-28 py-20">
+      <div className="w-full py-16 xxxs:hidden md:block ">
+        <div className="flex container mx-auto  ">
           {banner.map((value, index) => (
             <Banner
               head={value.head}

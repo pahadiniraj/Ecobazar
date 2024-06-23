@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
-import Img from "../../../assets/CounterImg/BG.png";
 
 function CounterPage() {
   const [counterState, setCounterState] = useState(false);
   return (
-    <div className="bg-black   w-full ">
-      <div className=" container mx-auto">
-        <div className="justify-center flex items-center h-[311px] px-28">
+    <div className="bg-black   w-full xxxs:hidden md:block">
+      <div className=" xs:container xs:mx-auto  ">
+        <div className="justify-center flex items-center h-[300px] xxxs:px-10 md:px-5 gap-5 ">
           {[
             {
               count: 37,
@@ -32,13 +31,10 @@ function CounterPage() {
           ].map((val, idx) => (
             <div
               key={idx}
-              className="bg-slate-800 rounded flex flex-col justify-center items-center gap-1 mx-4 w-[312px] h-[174px] "
+              className="bg-slate-800 rounded flex flex-col justify-center items-center w-1/4 h-2/4 xs:h-2/4  p-3"
             >
-              <ScrollTrigger
-                onEnter={() => setCounterState(true)}
-                // onExit={() => setCounterState(false)}
-              >
-                <h2 className="text-4xl text-green-500 ">
+              <ScrollTrigger onEnter={() => setCounterState(true)}>
+                <h2 className=" text-green-500 xxxs:text-lg  xs:text-4xl">
                   {counterState && (
                     <CountUp start={0} end={val.count} duration={3.5}></CountUp>
                   )}
@@ -46,7 +42,9 @@ function CounterPage() {
                   {val.sign}
                 </h2>
               </ScrollTrigger>
-              <p className="text-white text-sm">{val.discription}</p>
+              <p className="text-white xxxs:text-xxxs xs:text-xs text-center">
+                {val.discription}
+              </p>
             </div>
           ))}
         </div>

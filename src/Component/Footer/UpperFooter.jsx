@@ -1,9 +1,9 @@
 function UpperFooter() {
   return (
-    <footer className="w-full bg-slate-100 ">
-      <div className="container mx-auto">
-        <div className="flex justify-between  py-10 px-28 ">
-          <div className="flex gap-2 ">
+    <footer className="w-full bg-slate-100 md:py-8 py-3 ">
+      <div className="px-10 md:container md:mx-auto">
+        <div className="flex flex-col   w-full items-center md:flex-row  md:gap-3 md:justify-between   ">
+          <div className="flex gap-2 items-center   ">
             <span>
               <svg
                 width="20"
@@ -18,27 +18,29 @@ function UpperFooter() {
                 />
               </svg>
             </span>
-            <span className="font-medium text-2xl">Ecobazar</span>
+            <span className=" text-2xl font-semibold">Ecobazar</span>
           </div>
-          <div>
-            <p className="font-semibold text-medium">Subcribe our Newsletter</p>
-            <p className="font-light text-xs  ">
+          <div className=" text-center  md:text-start flex-col items-center mb-4 md:mb-0  ">
+            <p className="font-semibold text-medium  ">
+              Subcribe our Newsletter
+            </p>
+            <p className="font-light text-xxs text-center ">
               Pellentesque eu nibh eget mauris congue mattis matti.
             </p>
           </div>
-          <div className="flex">
-            <span className="w-full">
+          <div className="flex justify-center items-center relative  w-full md:w-2/5">
+            <div className="w-full">
               <input
                 type="text"
                 placeholder="Your Email address"
-                className="p-3 rounded-3xl w-[350px] border-none focus:outline-none text-xs "
+                className="p-3 rounded-3xl  border-none focus:outline-none text-xs w-full "
               />
-            </span>
-            <span>
-              <button className="bg-[#00B207] p-3 rounded-3xl relative right-8 text-xs text-white">
+            </div>
+            <div className="absolute right-0">
+              <button className="bg-[#00B207] p-3 rounded-3xl relative text-xs text-white">
                 Subscribe
               </button>
-            </span>
+            </div>
           </div>
         </div>
       </div>

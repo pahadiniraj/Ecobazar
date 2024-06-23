@@ -17,7 +17,9 @@ const Stars = ({ stars, reviews, className }) => {
   return (
     <div className={className}>
       {ratingStars}
-      {reviews && <span>({reviews} reviews)</span>}
+      <div className="xxxs:hidden md:block md:text-xxs">
+        {reviews && <span>({reviews} reviews)</span>}
+      </div>
     </div>
   );
 };
